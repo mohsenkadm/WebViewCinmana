@@ -25,9 +25,14 @@ namespace WebViewCinmana
                 CacheValidity = TimeSpan.FromDays(5)
             };
             DependencyService.Get<IDeviceSpecificService>().ClearCookies();
-
-            Task.Run(() => LoadPopup());
         }
+
+        protected override void OnAppearing()
+        {
+            Task.Run(async () => await LoadPopup());
+            base.OnAppearing();
+        }
+
         #region LoadPopup
         private async Task LoadPopup()
         {
@@ -37,7 +42,7 @@ namespace WebViewCinmana
 
                 try
                 {
-                     var client = new HttpClient();
+                    var client = new HttpClient();
                     HttpResponseMessage response = await client.GetAsync(apiUrl);
 
                     if (response.IsSuccessStatusCode)
@@ -51,11 +56,11 @@ namespace WebViewCinmana
                             await Navigation.PushPopupAsync(dailog, false);
                         }
                     }
-                    
+
                 }
                 catch (Exception ex)
                 {
-                }                   
+                }
             }
             catch (Exception ex)
             { }
@@ -64,7 +69,7 @@ namespace WebViewCinmana
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            
+
             await Navigation.PushAsync(new WebView(), true);
         }
 

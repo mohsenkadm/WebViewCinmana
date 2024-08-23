@@ -13,6 +13,7 @@ using Xamarin.Forms.Xaml;
 namespace WebViewCinmana
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
+    [Xamarin.Forms.Internals.Preserve(AllMembers = true)]
     public partial class PopupImage : PopupPage
     {
         ApiData data1;

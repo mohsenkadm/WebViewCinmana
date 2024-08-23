@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WebViewCinmana.MainPage"
              NavigationPage.HasNavigationBar="True"  BackgroundColor="{x:DynamicResource Primary2}"  >
-    
+
 
     <ContentPage.Content>
         <ScrollView>
@@ -11,12 +11,12 @@
                 <Image Aspect="AspectFill" 
                            Source="logo.png"
                            VerticalOptions="CenterAndExpand" 
-                        Margin="40,0,40,20"
+                        Margin="40,0,40,0"
                                HorizontalOptions="CenterAndExpand" ></Image>
 
-               
-                  <Image IsAnimationPlaying="True"  Aspect="AspectFill"     BackgroundColor="{x:DynamicResource Primary2}"   
-                   x:Name="img1" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand"  Margin="0,0">
+
+                <Image IsAnimationPlaying="True"  Aspect="AspectFill"     BackgroundColor="{x:DynamicResource Primary2}"   
+                   x:Name="img1" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand"  Margin="0,60,0,100">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="ImageButton_Clicked"/>
                     </Image.GestureRecognizers>
